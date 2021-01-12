@@ -2,6 +2,7 @@ package com.example.androidcatchup
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
@@ -12,6 +13,9 @@ import kotlinx.coroutines.launch
 
 // https://developer.android.com/kotlin/flow#collect
 class MainActivity : AppCompatActivity() {
+
+    val viewModel: BlankViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

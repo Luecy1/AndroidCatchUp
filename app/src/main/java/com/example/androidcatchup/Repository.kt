@@ -2,6 +2,7 @@ package com.example.androidcatchup
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -23,6 +24,10 @@ interface Repository {
 
     @GET("/todos/1")
     suspend fun items(): Item
+
+    @GET("/todos/1")
+    suspend fun itemsFlow(): Flow<Item>
+
 }
 
 data class Item(
