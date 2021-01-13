@@ -30,6 +30,15 @@ class MainActivity : AppCompatActivity() {
             val items = repository.items()
             Log.d("MainActivity", items.toString())
         }
+
+        // StateFlow
+        lifecycleScope.launchWhenCreated {
+            // launchWhenCreated lifecycleに対応したlaunch
+            viewModel.uiState.collect {
+                Log.d("MainActivity", it)
+            }
+
+        }
     }
 
     private fun flowValue(): Flow<String> = flow {
