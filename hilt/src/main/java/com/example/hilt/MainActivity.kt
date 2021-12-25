@@ -24,5 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         // complexClassが使える
         Log.d("@@@", complexClass.getString())
+
+        val nonHiltClass = NonHiltClass(applicationContext)
+        nonHiltClass.useSimpleClass()
     }
 }
